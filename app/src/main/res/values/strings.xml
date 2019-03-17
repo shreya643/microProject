@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Popcorn Time</string>
+    <string name="big_movies">Big Movies</string>
+    <string name="f_cube">Fcube Cinemas</string>
+    <string name="qs">Qs Cinemas</string>
+    <string name="qfxk">QFX Kumari</string>
+    <string name="qfxj">QFX Jai Nepal</string>
+    <string name="qfxc">QFX Civil Mall</string>
+    <string name="qfxch">QFX Chaya Centre</string>
+    <string name="qfxl">QFX Labim Mall</string>
+    <string name="back">POp</string>
+    <string name="refresh">Refresh</string>
+</resources>
