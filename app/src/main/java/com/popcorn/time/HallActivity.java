@@ -1,10 +1,9 @@
-package com.example.myapplication;
+package com.popcorn.time;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.support.v7.widget.GridLayout;
@@ -31,21 +30,22 @@ public class HallActivity extends AppCompatActivity {
         setContentView(R.layout.hall);
 
         Intent intent = getIntent();
-        String message = intent.getStringExtra("message");
+        final String message = intent.getStringExtra("module");
+        String hall=intent.getStringExtra("hallName");
 
         final DatabaseOpenHelper databaseOpenHelper=new DatabaseOpenHelper(this);
         FloatingActionButton b=(FloatingActionButton) findViewById(R.id.refresh);
         b.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 databaseOpenHelper.drop();
-                databaseOpenHelper.convertShow();
+                databaseOpenHelper.convertShow(message);
             }});
 
         List <ShowTiming> movieTime= databaseOpenHelper.loadHandler();
 
     for (ShowTiming show : movieTime) {
 
-            if (show.getHall().equals(message)) {
+            if (show.getHall().equals(hall)) {
                 this.gridLayout = findViewById(R.id.tab_big);
                 this.gridLayout.setColumnCount(2);
                 this.gridLayout.setColumnOrderPreserved(true);

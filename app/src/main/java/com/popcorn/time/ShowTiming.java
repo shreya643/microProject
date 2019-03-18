@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.popcorn.time;
 
 public class ShowTiming {
     private Integer id;

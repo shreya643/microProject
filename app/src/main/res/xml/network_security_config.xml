@@ -4,4 +4,7 @@
     <domain-config cleartextTrafficPermitted="true">
         <domain includeSubdomains="true"> ticket.bigmovies.com.np </domain>
     </domain-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">qfxcinemas.com </domain>
+    </domain-config>
 </network-security-config>

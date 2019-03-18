@@ -1,11 +1,10 @@
-package com.example.myapplication;
+package com.popcorn.time;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.graphics.Movie;
 import android.util.Log;
 
 import com.chaquo.python.PyObject;
@@ -88,13 +87,14 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
     }
 
 
-    public void convertShow() {
+    public void convertShow(String message) {
         if(!Python.isStarted()) {
             Python.start(Python.getPlatform());
         }
         Python py = Python.getInstance();
-        PyObject pym=py.getModule("big");
-        List<PyObject> list=pym.callAttr("main").asList();
+        PyObject pym=py.getModule("scrapeHalls");
+        Log.d("msg5",message);
+        List<PyObject> list=pym.callAttr(message).asList();
         for(PyObject showTime:list)
         {
             ShowTiming show=new ShowTiming();

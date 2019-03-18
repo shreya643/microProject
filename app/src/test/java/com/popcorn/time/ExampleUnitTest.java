@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.popcorn.time;
 
 import org.junit.Test;
 
